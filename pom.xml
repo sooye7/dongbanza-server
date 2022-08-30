@@ -11,6 +11,7 @@
 	<groupId>com.spring</groupId>
 	<artifactId>companion</artifactId>
 	<version>3.8.1</version>
+	<packaging>jar</packaging>
 	<name>CompanionServer</name>
 	<description>Companion-server Project</description>
 	<properties>
@@ -100,6 +101,11 @@
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk-ec2</artifactId>
 			<version>1.12.290</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>5.3.22</version>
 		</dependency>
 	</dependencies>
 
