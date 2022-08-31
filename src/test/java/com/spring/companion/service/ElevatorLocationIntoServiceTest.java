@@ -18,16 +18,16 @@ class ElevatorLocationIntoServiceTest {
     @Autowired
     private ElevatorLocationIntoService elevatorLocationIntoService;
 
-    @Test
-    public void getElevatorList(){
-        Map<String, Integer> param1=new HashMap<>();
-        Map<String, String> param2=new HashMap<>();
-        param1.put("line",1);
-        param2.put("sub_name","서울");
-
-        List<ExternalElevatorResponseDto> elevatorLocationList = elevatorLocationIntoService.getExternalElevator(param1,param2);
-        System.out.println("서울");
-        System.out.println(elevatorLocationList);
-    }
+//    @Test
+//    public void getElevatorList(){
+//        Map<String, Integer> param1=new HashMap<>();
+//        Map<String, String> param2=new HashMap<>();
+//        param1.put("line",1);
+//        param2.put("sub_name","서울");
+//
+//        //List<ExternalElevatorResponseDto> elevatorLocationList = elevatorLocationIntoService.getExternalElevator(param1,param2);
+//        System.out.println("서울");
+//        System.out.println(elevatorLocationList);
+//    }
 
 }

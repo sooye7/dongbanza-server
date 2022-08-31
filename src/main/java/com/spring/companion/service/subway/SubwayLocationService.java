@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,6 +22,8 @@ public class SubwayLocationService {
     @Transactional
     public List<SubwayLocationResponseDto> getSubwayStationList(SubwayLocationRequestDto subwayLocationRequestDto){
         // repository에서 근처 역 LIST 받아오기
+        System.out.println(subwayLocationRequestDto.getLng());
+        System.out.println(subwayLocationRequestDto.getLat());
         return entityListToResponseList(subwayLocationRepository.
                 findCurrentSubwayStationByPosition(subwayLocationRequestDto.getLng(),subwayLocationRequestDto.getLat()));
     }

@@ -2,6 +2,7 @@ package com.spring.companion.service.elevator;
 
 import com.spring.companion.domain.elevator.ElevatorLocation;
 import com.spring.companion.domain.elevator.repository.ElevatorLocationRepository;
+import com.spring.companion.dto.elevator.ElevatorLocationRequestDto;
 import com.spring.companion.dto.elevator.InternalElevatorResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -24,9 +25,13 @@ public class ElevatorLocationOutService {
     private final ModelMapper modelMapper;
 
     @Transactional
-    public List<InternalElevatorResponseDto> getInternalElevator(Map<String, Integer> line, Map<String, String> sub_name) {
+    public List<InternalElevatorResponseDto> getInternalElevator(ElevatorLocationRequestDto elevatorLocationRequestDto) {
         // 예외처리 필요 (NULL일 경우 "업데이트 중입니다.")
-        return entityListToResponseList(elevatorLocationRepository.findInternalEVBySubName(line.get("line"),sub_name.get("sub_name")));
+        List<InternalElevatorResponseDto> internalElevatorResponseDtoList
+                =entityListToResponseList(elevatorLocationRepository.findInternalEVBySubName(elevatorLocationRequestDto.getLine(),elevatorLocationRequestDto.getSub_name()));
+        if(internalElevatorResponseDtoList.isEmpty())
+            internalElevatorResponseDtoList.add(new InternalElevatorResponseDto("업데이트 중입니다"));
+        return internalElevatorResponseDtoList;
     }
 
 
