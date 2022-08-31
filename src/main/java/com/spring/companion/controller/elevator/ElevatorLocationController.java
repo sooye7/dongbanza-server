@@ -22,7 +22,7 @@ public class ElevatorLocationController {
     @GetMapping("/elevator/in")
     public List<ExternalElevatorResponseDto> intoSubwayStation(@RequestParam Map<String, Integer> line, Map<String, String> sub_name){
         // 지하철역 출구 엘리베이터 조회 (외부 엘리베이터)
-        return elevatorLocationIntoService.getExternalElevator(line, sub_name);
+        return elevatorLocationIntoService.getExternalElevator(line,  sub_name);
     }
 
     // 승강장 번호 정보
