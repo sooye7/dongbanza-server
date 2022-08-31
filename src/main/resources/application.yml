@@ -14,7 +14,7 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://my-rds-instance.cslhv3zolr0w.ap-northeast-2.rds.amazonaws.com:3306/substation_info
+    url: jdbc:mysql://my-rds-instance.cslhv3zolr0w.ap-northeast-2.rds.amazonaws.com:3306/my_rds_db
     username: admin
     #url: jdbc:mysql://localhost:3306/substation_info
     #username: root
