@@ -17,9 +17,13 @@ import java.util.Map;
 public class SubwayLocationController {
 
     private final SubwayLocationService subwayLocationService;
-
+    //
+//    @GetMapping("/subway/loc")
+//    public List<SubwayLocationResponseDto> currentSubwayLocation(@RequestBody SubwayLocationRequestDto subwayLocationRequestDto){
+//        return subwayLocationService.getSubwayStationList(subwayLocationRequestDto);
+//    }
     @GetMapping("/subway/loc")
-    public List<SubwayLocationResponseDto> currentSubwayLocation(@RequestBody SubwayLocationRequestDto subwayLocationRequestDto){
+    public SubwayLocationResponseDto currentSubwayLocation(@RequestBody SubwayLocationRequestDto subwayLocationRequestDto){
         return subwayLocationService.getSubwayStationList(subwayLocationRequestDto);
     }
 

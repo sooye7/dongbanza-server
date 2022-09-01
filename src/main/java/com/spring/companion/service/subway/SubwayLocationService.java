@@ -19,14 +19,24 @@ public class SubwayLocationService {
     private final SubwayLocationRepository subwayLocationRepository;
     private final ModelMapper modelMapper;
 
+//    @Transactional
+//    public List<SubwayLocationResponseDto> getSubwayStationList(SubwayLocationRequestDto subwayLocationRequestDto){
+//        // repository에서 근처 역 LIST 받아오기
+//        System.out.println(subwayLocationRequestDto.getLng());
+//        System.out.println(subwayLocationRequestDto.getLat());
+//        return entityListToResponseList(subwayLocationRepository.
+//                findCurrentSubwayStationByPosition(subwayLocationRequestDto.getLng(),subwayLocationRequestDto.getLat()));
+//    }
+
     @Transactional
-    public List<SubwayLocationResponseDto> getSubwayStationList(SubwayLocationRequestDto subwayLocationRequestDto){
+    public SubwayLocationResponseDto getSubwayStationList(SubwayLocationRequestDto subwayLocationRequestDto){
         // repository에서 근처 역 LIST 받아오기
         System.out.println(subwayLocationRequestDto.getLng());
         System.out.println(subwayLocationRequestDto.getLat());
         return entityListToResponseList(subwayLocationRepository.
-                findCurrentSubwayStationByPosition(subwayLocationRequestDto.getLng(),subwayLocationRequestDto.getLat()));
+                findCurrentSubwayStationByPosition(subwayLocationRequestDto.getLng(),subwayLocationRequestDto.getLat())).get(0);
     }
+
     @Transactional
     public List<SubwayLocationResponseDto> entityListToResponseList(List<SubwayLocation> subwayLocationList){
         return subwayLocationList

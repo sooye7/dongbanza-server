@@ -15,11 +15,11 @@ class SubwayLocationServiceTest {
     @Autowired
     private SubwayLocationService subwayLocationService;
 
-
-    @Test
-    public void getSubwayStationList(){
-        List<SubwayLocationResponseDto> subwayLocationList = subwayLocationService.getSubwayStationList(new SubwayLocationRequestDto(126.9019532,37.5170112));
-        System.out.println(subwayLocationList);
-    }
+//
+//    @Test
+//    public void getSubwayStationList(){
+//        List<SubwayLocationResponseDto> subwayLocationList = subwayLocationService.getSubwayStationList(new SubwayLocationRequestDto(126.9019532,37.5170112));
+//        System.out.println(subwayLocationList);
+//    }
 
 }
