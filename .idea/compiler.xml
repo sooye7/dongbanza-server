@@ -8,12 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="companion-server" />
+        <module name="companion" />
         <module name="searchsubway" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="companion" options="-parameters" />
       <module name="companion-server" options="-parameters" />
       <module name="searchsubway" options="-parameters" />
     </option>
